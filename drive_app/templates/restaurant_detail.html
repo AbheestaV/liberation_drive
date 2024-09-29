@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ restaurant.name }}</title>
+    </head>
+    <body>
+        <h1>{{ restaurant.name }}</h1>
+        <p>Address: {{ restaurant.address }}</p>
+        <p>Phone: {{ restaurant.phone_number }}</p>
+        <p>Rating: {{ restaurant.rating }}</p>
+
+        <h2>Menu Items</h2>
+        <ul>
+            {% for item in restaurant.menuitem_set_all %}
+                <li>{{ item.name }} - {{ item.price }}</li>
+            {% empty %}
+                <li>No menu items available</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

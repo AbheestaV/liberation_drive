@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Rides</title>
+    </head>
+    <body>
+        <h1>My Rides</h1>
+        <ul>
+            {% for ride in rides %}
+                <li>
+                    Ride ID: {{ ride.id }} - Status: {{ ride.ride_status }} - Fare: {{ ride.fare }}<br>
+                    Pickup: {{ ride.pickup_address }}<br>
+                    Dropoff: {{ ride.dropoff_address }}<br>
+                    Ride Time: {{ ride.ride_time }}
+                </li>
+            {% empty %}
+                <li>No rides yet.</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

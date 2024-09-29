@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Orders</title>
+</head>
+<body>
+    <h1>My Orders</h1>
+    <ul>
+        {% for order in orders %}
+            <li>
+                Order ID: {{ order.id }} - {{ order.total_price }} - Status: {{ order.status }}<br>
+                Delivery Address: {{ order.delivery_address }}<br>
+                Placed At: {{ order.placed_at }}
+            </li>
+        {% empty %}
+            <li>No orders yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
